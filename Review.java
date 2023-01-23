@@ -163,7 +163,21 @@ public class Review {
     }
   }
 
-  public static double totalSentiment(SimpleReview){
-    
-  }
+  public static double totalSentiment(String fileName){
+    String customerReview = textToString(fileName);
+    double total = 0;
+    int i = customerReview.indexOf(" ");
+    while (i != -1)
+    { 
+      String word = customerReview.substring(0, i);
+      total += sentimentVal(word);
+      customerReview = customerReview.substring(i+1);
+      i = customerReview.indexOf(" ");
+      if (i == -1){
+        total += sentimentVal(customerReview.substring(0));
+      }
+    }
+
+    return total;
+ }
 }
