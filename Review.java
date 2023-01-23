@@ -162,4 +162,8 @@ public class Review {
       return randomNegativeAdj();
     }
   }
+
+  public static double totalSentiment(SimpleReview){
+    
+  }
 }
