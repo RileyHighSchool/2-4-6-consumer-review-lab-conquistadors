@@ -5,6 +5,8 @@ public class Main
         System.out.println(Review.sentimentVal("back"));
 
         System.out.println(Review.totalSentiment("SimpleReview.txt"));
+
+        System.out.println(Review.starRating("SimpleReview.txt"));
     }
 
 }
