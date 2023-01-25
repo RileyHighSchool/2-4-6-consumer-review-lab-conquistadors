@@ -203,6 +203,10 @@ public class Review {
   }
 
   public static String fakeReview(String fileName){
-    
+    String customerReview = textToString(fileName);
+    String newReview = "";
+    while(){
+      int starLoc = review.indexOf("*");
+    }
   }
 }
