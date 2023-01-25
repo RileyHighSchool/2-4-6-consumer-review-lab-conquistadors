@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import javax.lang.model.util.ElementScanner14;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -174,10 +177,32 @@ public class Review {
       customerReview = customerReview.substring(i+1);
       i = customerReview.indexOf(" ");
       if (i == -1){
-        total += sentimentVal(customerReview.substring(0));
+        total += sentimentVal(removePunctuation(customerReview.substring(0)));
       }
     }
 
     return total;
  }
+  public static int starRating(String fileName){
+    double totalSentiment = totalSentiment(fileName);
+    if(totalSentiment < 0){
+      return 1;
+    }
+    else if(totalSentiment < 5){
+      return 2;
+    }
+    else if(totalSentiment < 10){
+      return 3;
+    }
+    else if(totalSentiment < 15){
+      return 4;
+    }
+    else{
+      return 5;
+    }
+  }
+
+  public static String fakeReview(String fileName){
+    
+  }
 }
