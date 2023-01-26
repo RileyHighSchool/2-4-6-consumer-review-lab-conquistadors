@@ -40,7 +40,7 @@ public class Review {
       Scanner input = new Scanner(new File("positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
-        System.out.println(temp);
+     //   System.out.println(temp);
         posAdjectives.add(temp);
       }
       input.close();
@@ -205,8 +205,21 @@ public class Review {
   public static String fakeReview(String fileName){
     String customerReview = textToString(fileName);
     String newReview = "";
-    while(){
-      int starLoc = review.indexOf("*");
+    String finish = "\n";
+    int star = customerReview.indexOf("*");
+    int space = customerReview.indexOf(" ", star);
+    while(star != -1){
+      newReview += customerReview.substring(0, star);
+      newReview += randomNegativeAdj();
+      customerReview = customerReview.substring(space);
+      
+      star = customerReview.indexOf("*");
+      space = customerReview.indexOf(" ", star);
+      if (star == -1){
+        newReview += customerReview;
+        newReview += finish;
+      }
     }
+    return newReview;
   }
 }
