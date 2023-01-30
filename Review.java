@@ -202,7 +202,8 @@ public class Review {
     }
   }
 
-  public static String fakeReview(String fileName){
+  public static String fakeReview(String fileName, boolean isPos){
+    // Boolean which = false;
     String customerReview = textToString(fileName);
     String newReview = "";
     String finish = "\n";
@@ -210,7 +211,12 @@ public class Review {
     int space = customerReview.indexOf(" ", star);
     while(star != -1){
       newReview += customerReview.substring(0, star);
-      newReview += randomNegativeAdj();
+      if (isPos == true){
+        newReview += randomPositiveAdj();
+      }
+      else if (isPos == false){
+        newReview += randomNegativeAdj();
+      }
       customerReview = customerReview.substring(space);
       
       star = customerReview.indexOf("*");
