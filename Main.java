@@ -9,6 +9,7 @@ public class Main
         System.out.println(Review.starRating("SimpleReview.txt"));
 
         System.out.println(Review.fakeReview("SimpleReview.txt"));
+
     }
 
 }
