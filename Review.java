@@ -228,4 +228,24 @@ public class Review {
     }
     return newReview;
   }
+  public static String commentToYou(String fileName, boolean isPos){
+    String commentTemp = textToString(fileName);
+    String newComment = "";
+    String finish = "\n";
+    int star = commentTemp.indexOf("*");
+    while(star != -1){
+      newComment += commentTemp.substring(0, star);
+      if (isPos == true){
+        newComment += randomPositiveAdj();
+      }
+      else if (isPos == false){
+        newComment += randomNegativeAdj();
+      }
+      commentTemp = commentTemp.substring(star + 1);
+      star = commentTemp.indexOf("*");
+
+    }
+    newComment += finish;
+    return newComment;
+  }
 }
