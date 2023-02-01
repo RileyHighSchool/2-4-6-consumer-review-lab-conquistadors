@@ -4,8 +4,9 @@ public class Main
     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
-        Boolean ifPos;
+        Boolean ifPos = true;
 
+        System.out.println("\nEnter true for a positive response, or false for a negative response:");
         String trueOrFalse = sc.nextLine();
         if (trueOrFalse.equals("true")){
             ifPos = true;
